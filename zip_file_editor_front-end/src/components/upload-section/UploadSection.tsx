@@ -1,14 +1,14 @@
 'use client';
 
 import styles from './UploadSection.module.css';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { useFileStore } from '@/stores';
 import { useDragAndDrop } from '@/hooks/useDragAndDrop';
 import { useZipFileUpload } from '@/hooks/useZipFileUpload';
 import { useZipFileDownload } from '@/hooks/useZipFileDownload';
 import { useFileChangeTracker } from '@/hooks/useFileChangeTracker';
 
-export default function UploadSection() {
+function UploadSection() {
 
     const fileInputRef = useRef<HTMLInputElement>(null);
     
@@ -146,3 +146,5 @@ export default function UploadSection() {
         </>
     );
 }
+
+export default React.memo(UploadSection);

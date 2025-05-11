@@ -1,14 +1,14 @@
 'use client';
 
 import styles from './FileTree.module.css';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useFileStore, ZipEntry } from '@/stores';
 import { createDirectoryMap, getFileIcon } from '@/utils/fileTreeUtils';
 import { useFileTreeContextMenu } from '@/hooks/useFileTreeContextMenu';
 import { useFileTreeNavigation } from '@/hooks/useFileTreeNavigation';
 import { useFileTreeHandler } from '@/hooks/useFileTreeHandler';
 
-export default function FileTree() {
+function FileTree() {
 
     const zipContent = useFileStore((state) => state.zipContent);
     const selectedFile = useFileStore((state) => state.selectedFile);
@@ -207,3 +207,5 @@ export default function FileTree() {
         </div>
     );
 }
+
+export default React.memo(FileTree);

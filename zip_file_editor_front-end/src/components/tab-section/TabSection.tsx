@@ -1,12 +1,13 @@
 'use client';
 
-import { useFileStore } from '@/stores';
 import styles from './TabSection.module.css';
+import React from 'react';
+import { useFileStore } from '@/stores';
 import { hasDuplicateFilenames } from '@/utils/tabUtils';
 import { useTabEvents } from '@/hooks/useTabEvents';
 import { useTabManagement } from '@/hooks/useTabManagement';
 
-export default function TabSection() {
+function TabSection() {
 
     const openFiles = useFileStore((state) => state.openFiles);
     const currentFilePath = useFileStore((state) => state.currentFilePath);
@@ -44,3 +45,5 @@ export default function TabSection() {
         </div>
     );
 }
+
+export default React.memo(TabSection);
