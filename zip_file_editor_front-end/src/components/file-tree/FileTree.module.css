@@ -1,63 +1,128 @@
 .fileTree {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  border-right: 1px solid #aaa;
-  background-color: #f8f8f8;
-  overflow: hidden;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-right: 1px solid #aaa;
+    background-color: #f8f8f8;
+    overflow: hidden;
 }
 
 .treeContent {
-  flex: 1;
-  overflow-y: auto;
-  padding: 6px;
-  height: calc(100% - 1.5rem);
-  position: relative; /* 컨텍스트 메뉴 위치 지정을 위해 추가 */
+    flex: 1;
+    overflow-y: auto;
+    padding: 6px;
+    height: calc(100% - 1.5rem);
+    position: relative;
+}
+
+.errorMessage {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff0f0;
+    border: 1px solid #ffdddd;
+    border-radius: 4px;
+    color: #d32f2f;
+}
+
+.emptyState,
+.loadingState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #666;
+    height: 100px;
 }
 
 .treeContainer {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .treeItem {
-  margin-bottom: 2px;
+    margin-bottom: 2px;
 }
 
 .itemHeader {
-  display: flex;
-  align-items: center;
-  padding: 6px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  user-select: none;
+    display: flex;
+    align-items: center;
+    padding: 6px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
 }
 
 .itemHeader:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .itemIcon {
-  margin-right: 8px;
-  flex-shrink: 0;
+    margin-right: 8px;
+    flex-shrink: 0;
 }
 
 .itemName {
-  flex-grow: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 14px;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
 }
 
 .expandIcon {
-  margin-left: 5px;
-  font-size: 10px;
-  color: #666;
+    margin-left: 5px;
+    font-size: 10px;
+    color: #666;
 }
 
 .itemChildren {
-  margin-left: 16px;
-  border-left: 1px dashed #ccc;
+    margin-left: 16px;
+    border-left: 1px dashed #ccc;
+}
+
+.contextMenu {
+    position: fixed;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.contextMenuItem {
+    padding: 8px 12px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+}
+
+.contextMenuItem:hover {
+    background-color: #f5f5f5;
+}
+
+.contextMenuDivider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 4px 0;
+}
+
+.newItemForm {
+    padding: 4px 8px;
+    margin-top: 2px;
+}
+
+.newItemForm input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.newItemForm input:focus {
+    border-color: #2196f3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
 }
