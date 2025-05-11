@@ -2,7 +2,6 @@
 
 import { useFileStore } from '@/stores';
 import styles from './TabSection.module.css';
-
 import { hasDuplicateFilenames } from '@/utils/tabUtils';
 import { useTabEvents } from '@/hooks/useTabEvents';
 import { useTabManagement } from '@/hooks/useTabManagement';

@@ -14,11 +14,69 @@
     overflow: hidden;  
 }
 
-.editorReady {
+.editorEmpty, .editorReady {
     color: #666;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+}
+
+.htmlContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: auto;
+    padding: 20px;
+}
+
+.textContent {
+    white-space: pre-wrap;
+    padding: 20px;
+    font-family: monospace;
+    overflow: auto;
+    margin: 0;
+    height: 100%;
+}
+
+.monacoContainer {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.editorLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+}
+
+.binaryFile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.imagePreview {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
 }
